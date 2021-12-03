@@ -1,0 +1,8 @@
+{
+  "name": "adventofcode",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/imposimato/adventofcode.git",
+  "author": "Luiz Imposimato <limposimato@shutterstock.com>",
+  "license": "MIT"
+}
