@@ -1,9 +1,11 @@
 const fs = require('fs');
 
+console.time('perf');
+
 const array = fs.readFileSync('input.txt')
     .toString()
     .trimEnd()
-    .split("\n");
+    .split('\n');
 
 //Traversing the array to group the digits in a string
 function generateObject(arr) {
@@ -45,9 +47,10 @@ function findLifeSupport(string, arr, mostCommon) {
     const index = arr[0].length - string.length;
     arr = arr.filter(item => item.charAt(index) === string[0]);
     return findLifeSupport(findFrequency(arr)[+!mostCommon].substr(index + 1), arr, mostCommon);
-
 }
 
 console.log({
     part2: parseInt(findLifeSupport(gamma, [...array], true), 2) * parseInt(findLifeSupport(epsilon, [...array], false), 2)
 });
+
+console.timeEnd('perf');
