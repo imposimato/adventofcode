@@ -9,18 +9,6 @@ const input = fs.readFileSync('input.txt')
     .map(val => val.split('').map(Number));
 
 
-let totalRisk = 0;
-for (let i = 0; i < input.length; i++) {
-    for (let j = 0; j < input[i].length; j++) {
-        const coords = [];
-        if (i > 0) coords.push(input[i - 1][j]);
-        if (j > 0) coords.push(input[i][j - 1]);
-        if (j < input[i].length - 1) coords.push(input[i][j + 1]);
-        if (i < input.length - 1) coords.push(input[i + 1][j]);
-        if (Math.min(...coords) > input[i][j]) totalRisk += input[i][j] + 1;
-    }
-}
-
 function explore(i, j, map) {
     const directions = [[0, 1], [1, 0], [0, -1], [-1, 0]];
     for (const direction of directions) {
@@ -34,7 +22,9 @@ function explore(i, j, map) {
     }
 }
 
+let totalRisk = 0;
 const countBasin = [];
+
 for (let i = 0; i < input.length; i++) {
     for (let j = 0; j < input[i].length; j++) {
         const coords = [];
@@ -43,6 +33,7 @@ for (let i = 0; i < input.length; i++) {
         if (j < input[i].length - 1) coords.push(input[i][j + 1]);
         if (i < input.length - 1) coords.push(input[i + 1][j]);
         if (Math.min(...coords) > input[i][j]) {
+            totalRisk += input[i][j] + 1;
             const map = new Map();
             map.set(i + ',' + j, 1);
             explore(i, j, map);
