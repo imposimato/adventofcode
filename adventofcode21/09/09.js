@@ -43,7 +43,7 @@ for (let i = 0; i < input.length; i++) {
 }
 
 console.log({
-    part1:totalRisk,
+    part1: totalRisk,
     part2: countBasin.sort((a,b) => a < b ? 1 : -1).slice(0, 3).reduce((prev, curr) => prev * curr),
 });
 
