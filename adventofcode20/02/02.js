@@ -16,7 +16,7 @@ const correctPasswordsPolicy1 = input.filter((record) => {
 
 const correctPasswordsPolicy2 = input.filter((record) =>
     record.pass[record.pos1 - 1] === record.key ^
-    record.pass[record.pos2 - 1] === record.key
+    record.pass[record.pos2 - 1] === record.key,
 );
 
 console.log(correctPasswordsPolicy1.length);

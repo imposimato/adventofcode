@@ -26,7 +26,7 @@ function findFrequency(arr) {
     let count = 0;
     const object = generateObject(arr);
     for (const item in object) {
-        [...object[item]].forEach((val, i) => {
+        [...object[item]].forEach(val => {
             if (val === '1') count++;
         });
         gamma += count >= Math.floor(object[item].length) / 2 ? '1' : '0';
@@ -38,7 +38,7 @@ function findFrequency(arr) {
 
 const [gamma, epsilon] = findFrequency(array);
 console.log({
-    part1: parseInt(gamma, 2) * parseInt(epsilon, 2)
+    part1: parseInt(gamma, 2) * parseInt(epsilon, 2),
 });
 
 // Recursively finds the single value
@@ -50,7 +50,8 @@ function findLifeSupport(string, arr, mostCommon) {
 }
 
 console.log({
-    part2: parseInt(findLifeSupport(gamma, [...array], true), 2) * parseInt(findLifeSupport(epsilon, [...array], false), 2)
+    part2: parseInt(findLifeSupport(gamma, [...array], true), 2)
+        * parseInt(findLifeSupport(epsilon, [...array], false), 2),
 });
 
 console.timeEnd('perf');

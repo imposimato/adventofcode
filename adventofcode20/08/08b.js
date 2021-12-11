@@ -13,7 +13,7 @@ const instrStack = [];
 
 const inverseInst = {
     nop: 'jmp',
-    jmp: 'nop'
+    jmp: 'nop',
 }
 // Rule takes current index and returns the next offset
 const rules = {

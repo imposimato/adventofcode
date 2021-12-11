@@ -20,7 +20,7 @@ function addPoint(key) {
     }
 }
 
-function populateHorizontalMap(x1, x2, y1, y2) {
+function populateHorizontalMap(x1, x2, y1) {
     let xStart = x1 >= x2 ? x2 : x1;
     const xEnd = x1 <= x2 ? x2 : x1;
     for (xStart; xStart <= xEnd; xStart++) {

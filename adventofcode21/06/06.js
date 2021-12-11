@@ -23,7 +23,7 @@ console.log(
     {
         'part1': growthInDays(input, 80),
         'part2': growthInDays(input, 256),
-    }
+    },
 );
 
 console.timeEnd('perf');

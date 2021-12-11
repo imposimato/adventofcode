@@ -29,7 +29,8 @@ function extractParentheses(arr, precedence) {
         const tempArr = arr.slice(0, firstClose);
         const newArrEnd = arr.slice(firstClose + 1);
         const split = tempArr.lastIndexOf('(');
-        const newArray = [...arr.slice(0, split), solvePrecedence(tempArr.slice(split + 1, firstClose), precedence), ...newArrEnd];
+        const newArray = [...arr.slice(0, split),
+            solvePrecedence(tempArr.slice(split + 1, firstClose), precedence), ...newArrEnd];
         return extractParentheses(newArray, precedence);
     } else {
         return solvePrecedence(arr, precedence);

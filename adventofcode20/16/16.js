@@ -16,12 +16,6 @@ const rules = params.map((line) => {
     return [name, x];
 });
 
-const nearbyTickets = tickets
-    .map((line) => line.split(",").map((i) => parseInt(i)));
-const yourTicket = input[22].split(",").map((i) => parseInt(i));
-
-myTicket = myTicket.slice(1)[0].split(',').map(v => parseInt(v));
-
 tickets = tickets.slice(1).map(v => v.split(',').map(v => parseInt(v)));
 
 const validIndexes = [];
@@ -57,10 +51,6 @@ tickets.forEach((outT, outIndex) => {
 })
 
 // console.log('Part One:', ticketError.reduce((acc, v) => acc + v));
-let count = 0;
-for (let i = 0; i < invalidTicketIndexes.length; i++) {
-    if (!invalidTicketIndexes[i]) count++;
-}
 
 const validTickets = tickets.filter((v, i) => !invalidTicketIndexes[i]);
 

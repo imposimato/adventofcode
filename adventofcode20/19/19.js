@@ -5,8 +5,7 @@ const input = fs.readFileSync('./test.txt')
     .trimEnd()
     .split('\n\n');
 
-let [rulesRaw, valuesRaw] = input;
-const messages = valuesRaw.split('\n');
+let [rulesRaw] = input;
 rulesRaw = rulesRaw.split('\n');
 const rules = {};
 

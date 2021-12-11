@@ -14,9 +14,9 @@ function explore(i, j, map) {
     for (const direction of directions) {
         const newI = i + direction[0];
         const newJ = j + direction[1];
-        if (newI < 0 || newI >= input.length
-            || !input[newI][newJ] || input[newI][newJ] === 9
-            || map.get(newI + ',' + newJ)) continue;
+        if (newI < 0 || newI >= input.length ||
+            !input[newI][newJ] || input[newI][newJ] === 9 ||
+            map.get(newI + ',' + newJ)) continue;
         map.set(newI + ',' + newJ, 1);
         explore(newI, newJ, map);
     }
